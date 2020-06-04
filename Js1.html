@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS我來了</h1>
+    <script>
+        MyCard = "紅心A";
+
+        
+        //aa=100; //a為一個變數，定義為100
+        //alert(aa); //呼叫視窗的函式
+        //console.log(aa); //要求寫道console的函式
+        //typeof() 檢查()裡面是啥
+        function aaa(name){
+            alert(`hellow world !! ${name}!!`);
+        }
+        word1=function(){
+            console.log(`Fack!!!`)
+        };
+        word2=function(){
+            console.log(`YOU!!!`)
+        };
+        function say(who){
+            who();
+        }
+        function show(name){
+            return "HI,"+name;
+        }
+
+        // 下方為直接處理匿名函式的方法需要被包起來，();為直接執行的意義
+        (function(){
+            console.log("這裡是台灣")
+        })();
+        
+        (function(nn){
+            console.log("這裡是台灣"+nn)
+        })("香蕉王");
+
+        function MyMod(){
+            function dogsay(){
+                console.log('汪');
+            }
+            function catsay(){
+                console.log('喵');
+            }
+            return {
+                dog:dogsay,
+                cat:catsay,
+                god:"阿門"
+            };
+        }     
+        function num(a=100){
+            console.log(a);
+        }
+
+        // ************變數************
+        // var,let,const
+        myVar1="臨時變數";
+        var myVar2="全域變數";
+        let myVar3="區域{}內的獨立變數"; //這個函式只能在{}的世界內使用，外部不影響
+        const myVar4="常態變數";
+
+        delete d //刪除臨時變數
+
+        function hollow(name){
+            console.log(`<h2>${name}</h2>`);
+        }
+        var Kname='我';
+        console.log(`<h2>${Kname}</h2>`);
+        for(let i=0,j=10;i<10;i++,j--){
+            console.log(`i=${i},j=${j}`);
+        }
+        
+    </script>
+</body>
+</html>

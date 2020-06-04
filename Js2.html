@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>第二次JS接觸實驗</h1>
+    <script>
+        a = 50 ;
+        if (a > 50) a = 100;
+        else a = 0;
+
+        
+        
+        let day=4;
+        console.log(`Today is ${day<6?"workday":"Holiday"}`);
+        
+      
+    
+        let lang="hr";
+        switch(lang){
+            case "tw":
+                console.log("我喜歡你");
+                break;
+            case "jp":
+                console.log("愛してる");
+                break;
+            case "us":
+                console.log("I LOVE YOU");
+                break;
+            case "hr":
+                console.log("我钟意你");
+                break;
+            default:
+            console.log("( ˘ ³˘)♥");
+                break;
+        };
+        
+        if (lang == "tw") console.log("我喜歡你");
+        else if (lang == "jp") console.log("愛してる");
+        else if (lang == "us") console.log("I LOVE YOU");
+        else if (lang == "hr") console.log("我钟意你");
+        else console.log("( ˘ ³˘)♥");
+
+        let h = 150;
+        let m = 50;
+        let f = 0;
+        function col(h,m,f){ 
+            console.log(`${h>170?"高":"矮"}${m>80?"富":"窮"}${f==1?"帥":"醜"}`);
+        }
+
+        let str="";
+        for (let i = 0; i < 10; i++) {
+           str+=i;
+        }
+        console.log(str);
+
+
+        let tyk="";
+        for (let i = 0; i < 4; i++) {
+            ty=3*i+1;     
+            tyk+=`${ty} `;
+        }
+        console.log(tyk);
+        for (let i = 1; i < 11; i+=3) {
+            console.log(i);            
+        }
+
+        for (let i = 1; i < 10; i++) {
+            let ttt="";
+           for (let j = 1; j < 10; j++) {
+            t=i*j;
+            // console.log(`${i}X${j}=${t}`);
+            ttt+=`${j}X${i}=${t} `;              
+           }      
+           console.log(ttt);
+        }
+
+        for (let i = 1 ,j=1; i < 10; j++) {
+            console.log(`${i}X${j}=${i*j}`);   
+            if(j==9){
+                j=0;
+                i++;
+            }
+        }    
+        let n=0;
+        while (n<5) {
+            console.log(n);
+            n++;
+        }
+
+        let k=0,msg="";
+        do{
+            k++;
+            msg += k;
+        }while (k<5)
+        console.log(msg);
+
+
+        // continue; //忽略
+        // break; // 斷開打破
+
+        var my=0;
+        while (my<10) {
+            my++;
+            if(my==5) continue;
+            if(my==8) break;
+            console.log(my);
+        }
+
+        function parrot(say){
+            if(say == "mute") return;
+            console.log("YAAAAAA~"+say);
+        }
+
+
+    </script>
+
+
+</body>
+</html>
