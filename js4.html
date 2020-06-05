@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用</title>
+</head>
+<body>
+    <h2>常用JS</h2>
+    <script>
+        var date=[123,456,789];
+        console.log(date.length);
+         
+        var txt="Hellow Word";
+        console.log(txt.length);
+
+        date.forEach((v)=>{console.log(v)});
+        for (const v of date) {
+            console.log(v);
+        }
+        a='5';
+        b=100;
+        console.log(a+3);
+        console.log(a+3+b);
+        console.log(3+b+a);
+        //8100
+        console.log(Number(a)+3+String(b)); //型態變化
+        //math
+        console.log(Math.round(6.4111111))//四捨五入
+        console.log(Math.ceil(6.1111111))//無條件進位
+        console.log(Math.floor(6.9111111))//無條件捨去
+        Math.random(); //隨機 0<=?<1
+        //0~9
+        console.log(Math.floor(Math.random()*10));
+        //0~10
+        console.log(Math.floor(Math.random()*11));
+        //40~80
+        console.log(Math.floor(Math.random()*41+40));
+        //自己做的隨機函式
+        function random(min,max) {
+            return Math.floor(Math.random()*(max-min+1)+min)
+        }
+
+        console.log("----------------------");
+        
+        //日期
+        var time=new Date(); //物件
+        var timestr=Date(); //字串
+
+        var cTime1=new Date(2019,11,31,23,59,59,999); //月份為0~11，所以12月用11
+        var cTime2=new Date("2020-12-31T23:59:59"); //iso8601
+
+        time.getFullYear(); //西元年
+        time.getMonth(); //月0~11表示
+        time.getDate(); //日
+        time.getDay(); //星期幾
+        time.getHours(); //時
+        time.getMinutes(); //分
+        time.getSeconds(); //秒       
+        
+        time.getTime(); //時間搓記
+        var btw=Math.floor((cTime2.getTime()-time.getTime())/1000); //退位1000捨去小數，單位變秒
+        
+        btw_d=Math.floor(btw/60/60/24);
+        btw_h=Math.floor(((btw/60/60/24)-Math.floor(btw/60/60/24))*24);
+        btw_f=Math.floor(((btw/60/60)-Math.floor(btw/60/60))*60);
+        btw_S=Math.floor(((btw/60)-Math.floor(btw/60))*60);
+        console.log(`距離今年跨年只剩下${btw_d}天${btw_h}時${btw_f}分${btw_S}秒`)
+
+        console.log(`-------------------`);
+
+        btw_d=Math.floor(btw/(60*60*24));
+        btw_h=Math.floor(btw%(60*60*24)/(60*60));
+        btw_f=Math.floor(btw%(60*60*24)%(60*60)/60);
+        btw_S=Math.floor(btw%(60*60*24)%(60*60)%60);
+        console.log(`距離今年跨年只剩下${btw_d}天${btw_h}時${btw_f}分${btw_S}秒`)
+
+        console.log(`-------------------`);
+
+        var now=new Date();
+        var week=["週日","週一","週二","週三","週四","週五","週六"]
+        console.log(now)
+        var tt=now.getFullYear();
+        console.log(tt)
+        tt+=3;
+        console.log(tt)
+        now.setFullYear(tt)
+        console.log(now)
+
+        console.log(`-------------------`);
+
+        var now=new Date();
+        now.setFullYear(now.getFullYear()+3);
+        console.log(now);
+
+        console.log(`-------------------`);
+
+        console.log(now.getDay(now));
+        console.log(week[now.getDay(now)]);//week[now.getDay(now)] = week[0~6] 
+
+
+
+
+        
+    </script>
+</body>
+</html>

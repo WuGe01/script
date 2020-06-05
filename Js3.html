@@ -8,6 +8,59 @@
 <body>
     <h1>JS第三次接觸實驗</h1>
     <script>
+        let ary=new Array();
+        for (let i = 0; i < 11; i++) {
+            ary.push(i+"A");
+        }
+        // 函式內的方程式
+        function showary(b,a) {
+            console.log(`item=${a},value${b}`)
+        }
+        // ary.forEach(showary);
+        // ary.forEach(function (a,b) {
+        //     console.log(a,b);
+        // });
+        ary.forEach((a,b)=>{console.log(a,b);});
+        // function(s1){...};
+        // (s1)=>{...}; //快用型，但不支援this
+        console.log("-------------------");        
+        //for-of只會拿出Value
+        for (const i of ary) {
+            console.log(i);
+        }
+        console.log("-------------------");
+        //filter 過濾陣列產生新陣列
+        ary[50]=100;
+
+        function clearNull(vval) {
+            if(vval!=null) return vval;
+        }
+
+        // bry=ary.filter((vval)=>{if(vval!=null) return vval;});
+        // bry=ary.filter((vval)=>{return(vval!=null);});
+        bry=ary.filter((vval)=>{return vval!=null});
+        console.info(bry);
+        console.log("-------------------");
+        
+
+        //DATA陣列適合拿來做資料整理，DAT物件適合拿來做暫存
+        let obj={
+            cat:"加菲貓",
+            dog:"史努比",
+            other:{
+                house:"彩虹小馬",
+                mouse:"米老鼠",
+                seastar:"派大星"
+            }
+        } //JSON結構
+
+        //for-in 遍歷 key 適合物件
+        for (const key in obj) {
+            console.log(key,obj[key]);
+        }
+
+
+        console.log("-------------------");
         var a=new Array();
         a.push(123,456,789);
         a.pop();
@@ -17,6 +70,7 @@
         b[5]=147;
         var c=new Array();
         c=[[111,222,333,444],[555,666,777,888,999]];
+        
     </script>
 </body>
 </html>
