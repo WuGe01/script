@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="button" value="請按我一下" onclick="console.log('這是HTML來的喔')"> -->
+    <input type="button" value="請按我一下" onclick="showmsg('我是ONclick')">
+    <hr>
+    <input type="button" value="這裡看這裡" onclick="whatis(this)">
+    <br>
+    <input type="button" value="onmouseout" onmouseout="whatis(this)">
+    <br>
+    <input type="button" value="onmouseup" onmouseup="whatis(this)">
+    <br>
+    <input type="button" value="onmousedown" onmousedown="whatis(this)">
+    <br>
+    <input type="button" value="onmouseover" onmouseover="whatis(this)">
+
+    <input type="text" value="onchange" onchange="whatis(this)">
+    <input type="text" value="onblur" onblur="whatis(this)"> 
+    <input type="text" value="onfocus" onfocus="whatis(this)">
+    <div onclick="whatis(this)">香蕉你的爸樂</div>
+
+    <div id="fakeb"></div>
+    <div>你輸入的案件是:<span id="keyCode"></span></div>
+
+
+
+    <script>
+
+        // 鍵盤事件
+        
+        document.onkeydown=function(){
+            console.log(event.keyCode);
+            document.getElementById('keyCode').textContent=event.keyCode;
+        }
+       
+
+
+
+
+
+
+
+        //分隔
+        document.getElementById('fakeb').textContent="我是按鈕";
+        document.getElementById('fakeb').style="background:red;margin:5px;cursor:pointer";
+        // document.getElementById('fakeb').onclick=function(){
+        //     alert("is onclick")
+        // };
+        let fakeb=document.getElementById('fakeb');
+        fakeb.onclick=()=>{
+            alert(fakeb.style.backgroundColor);
+        }
+        function she(txt) {
+            console.log('txt');
+            
+        }
+
+
+        function whatis(a) {
+          let k=console.log(a.value);
+
+          if(a.style.color=="red"){
+            a.style.color=null
+            }
+            else{
+            a.style="color:red;font-size:2rem";
+            }
+                      
+        }
+
+
+        function showmsg(txt) {
+            console.log(txt);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="try" id="ock">
+    <input type="button" value="">
+    <script>
+        // 監聽事件
+        let btn=document.getElementById('ock');
+        btn.addEventListener("click",function(){
+            alert('別碰');
+        });
+        btn.addEventListener("mouseover",todo);
+        btn.addEventListener("mouseover",tosay);
+
+
+        setTimeout(() => {
+            btn.removeEventListener("mouseover",todo);
+            console.log('remove');
+        }, 10000);
+
+
+        function todo(){
+            alert("滑過");
+        }
+        function tosay(){
+            alert("變態");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="taget" style="width: 100px; height: 100px;background-color: red;"></div>
+    
+<hr>
+<br>
+<button onclick="clk(1)">正方形</button>
+<button onclick="clk(2)">圓形</button>
+<button onclick="clk(3)">三角形</button>
+<br>
+<br>
+<div>Color Code:<input type="text" value="red" id="color" onchange="updateValue(this)"></div>
+
+<script>
+let note = document.getElementById('taget');
+let color="red";
+// let color=document.getElementById('color').value;
+// addEventListener('input', updateValue);
+
+function updateValue(e) {
+    // let kk=document.getElementById('color').value;
+
+    color = e.value;
+    if(note.style.borderBottom == "")note.style.backgroundColor = `${color}`;     
+    else note.style.borderBottom=`100px solid ${color}`;
+
+    // if(note.style.borderBottom == ""){
+    //     note.style.backgroundColor = `${color}`;     
+    // }else{
+    //     note.style.borderBottom=`100px solid ${color}`;
+    // };
+}
+function clk(pass) {
+    switch (pass) {
+        case 1:           
+            note.style = `width:100px;height:100px;background-color:${color}`;
+            // note.style.width='100px';
+            // note.style.height='100px';
+            // note.style.borderRadius=null;
+            // note.style.borderLeft=null;
+            // note.style.borderRight=null;
+            // note.style.borderBottom=null;
+            // note.style.backgroundColor=`${color}`;           
+            break;
+        case 2:   
+            note.style = `width:100px;height:100px;border-radius:50px;background-color:${color}`;       
+            // note.style.width='100px';
+            // note.style.height='100px';
+            // note.style.borderRadius='50px';
+            // note.style.borderLeft=null;
+            // note.style.borderRight=null;
+            // note.style.borderBottom=null;
+            // note.style.backgroundColor=`${color}`;
+            break;
+        case 3:
+            note.style = `width:0px;height:0px;border-bottom:100px solid ${color};border-left:50px solid transparent;border-right:50px solid transparent`;  
+            // note.style.width='0px';
+            // note.style.height='0px';
+            // note.style.borderRadius=null;
+            // note.style.borderLeft="50px solid transparent";
+            // note.style.borderRight="50px solid transparent";
+            // note.style.borderBottom=`100px solid ${color}`;
+            // note.style.backgroundColor=null;            
+            break;         
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+
+        i=0;
+        j=0;
+        let stoptime=setInterval(reply,1000);
+        // setInterval(() => {
+        //     console.log(`A${j}`);
+        //     j++;
+        //     if(j==5);
+        // }, 1000);
+        function reply() {
+            console.log(i);
+            i++
+            if(i==10) clearInterval(stoptime);
+        }
+
+
+    </script>
+</body>
+</html>

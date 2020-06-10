@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">DOM</h1>
+    <ul id="demo">
+        <li class="list">apple</li>
+        <li class="list">banana</li>
+    </ul>
+    <script>
+        // let mytitle=document.getElementById('title');
+        // mytitle.innerHTML='不想說';
+        // // mytitle.innerText='不想說';
+        // let myul=document.getElementById('demo');
+        // mytitle.textContent="4444/ /4444";
+        // myul.innerHTML='這是IE8發明，但firebox不支援，建議別用使用textContent';
+
+        let food=document.getElementsByClassName("list");
+        console.log(food);
+        console.log(food[1]);
+        console.log(food[0]);
+        food[0].textContent='AAAA';
+
+
+        let food2=document.getElementsByTagName('li');
+        console.log(food2);
+        console.log(food2[1]);
+        console.log(food2[0]);
+        food2[1].textContent='ABBB';
+
+
+    </script>
+</body>
+</html>

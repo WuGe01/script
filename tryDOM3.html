@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clr{
+            color: aqua;
+        }
+        .bg{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.google.com" id='alink'> 我會去GOOGLE</a>
+    <input type="button" value="按鈕君" id="abtn" onclick="alert('aaaa')">
+
+    <script>
+        let nodeA=document.getElementById('alink');
+        let nodeB=document.getElementById('abtn');
+        nodeA.setAttribute("target","_blank");
+        nodeB.setAttribute("class","clr bg");
+        nodeB.removeAttribute("class");
+    </script>
+</body>
+</html>
