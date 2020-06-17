@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookle 彈出廣告</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            font-family: "微軟正黑體",Arial, Helvetica, sans-serif;
+        }
+        body{  
+            background-color: darkslategray;
+            color: ivory;
+        }
+        .center{
+            text-align: center;
+        }
+        .main{
+            width: 100vw;
+            height: 80vh;
+        }
+        marquee{
+            font-size: 1.5rem;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+        }
+        .myfull{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            background-color: rgb(50,50,50,0.5);
+            width: 100vw;
+            height: 100vh;
+        }
+        h1{
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .im{
+            width: 50vh;
+            height: 50vh;
+        }
+        .mycontant{
+            cursor: pointer;
+            position: relative;
+            
+        }
+        .mycontant .myclose{
+            position: absolute;
+            right: -0.5rem;
+            top: -0.5rem;
+            border: 3px solid  darkslategray;
+            border-radius: 50%;
+            background-color: darkslategray;
+        }
+        .myclose:hover{
+            border: 3px solid  lightcoral;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div class="myfull" >
+        <div class="mycontant">
+            <img class="im" src="./img/00.jpg">
+            <span class="myclose material-icons">cancel</span>
+        </div>
+    </div>
+
+
+    <h1 class="center">DADDY ! DADDY ! DO !</h1>
+    <div class="main">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2Od7QCsyqkE?autoplay=1" frameborder="0" allow="autoplay"></iframe>        
+    </div>
+    <marquee>
+        DADDY! DADDY! DO!
+         欲しいのさ　あなたのすべてが
+         愛に抱かれ　ギラギラ燃えてしまいたい
+        
+        可愛げなKISSキスで1・2・3
+         目線そらしてズルイよね
+         火照り出すボクの気持ち　もてあそぶみたいで
+        　
+        追いかけちゃ　ダメなのは　わかってる　でも無理さ
+         一度踏み出せば　戻れなくて　仮面は脱ぎ捨てて
+         いけない言葉で　遊びが本気になる
+        
+        DADDY! DADDY! DO!
+         欲しいのさ　あなたのすべてが
+         騙されたら　それでもいい　もっと震わせて
+         魅せてくれ　僕だけに　笑顔の裏まで
+         愛に抱かれ　ギラギラ燃えてしまいたい
+        
+        躊躇などしないNO NO NO
+         二度と逢えないひとだから
+         後悔に暮れるのなら　恋の火に焼かれたい
+        
+        わざとでしょう　流し目が　愛しさを　刺激する
+         そっと振り返る　美しさに　心はつかまれて
+         呼吸が止まって　遊びが本気になる
+        
+        DADDY! DADDY! DO!
+         ぶつけたい　想いのすべてを
+         綺麗なものだけじゃなくて　危険な願いも
+         止めないで　その声が　僕を連れていく
+         愛に抱かれ　ギラギラ燃えてしまいたい
+        
+        「あなただけ」と言うくちびるが
+         優しく微笑むたび　飲み込まれて　いざなわれて
+         未知の世界　触れて
+        
+        DADDY! DADDY! DO!
+         最後まで　あなたにゆだねて
+         壊れるなら　それでもいい　もっと狂わせて
+         魅せてくれ　僕だけに　こころの奥まで
+         愛に抱かれ　ギラギラ燃えたい
+         いのち果てる夜明けまで</marquee>
+
+<script>
+    // function adclose(){
+    //   document.getElementsByClassName('myfull')[0].style.display="none";
+    // }
+    // document.getElementsByClassName('myfull')[0].onclick=adclose;
+    function asgoto(){
+        open("https://garageplay.tw/movie/content/2021","_self");
+    }
+    // document.getElementsByClassName('im')[0].onclick=asgoto;
+    document.getElementsByClassName('mycontant')[0].getElementsByTagName('img')[0].onclick=asgoto;
+    document.getElementsByClassName('myfull')[0].addEventListener("click",()=>{
+    document.getElementsByClassName('myfull')[0].style.display="none";
+    });
+    // let dd=new Date();
+    // let lieftome=10;
+    // dd.setTime(dd.getTime()+(lieftome*1000));
+    // document.cookie="WuGe=888;expires="+dd.toUTCString();
+    function findCookie(name){
+        let aa=document.cookie.split(";");
+        let aaget=aa.find(e=>name+"=" === e.substr(0,name.length+1))
+        return (aaget) ? true : false;
+    }
+    
+    let ckeat=findCookie("adWatch");
+    if(!ckeat){
+        let end=new Date();      
+        end.setHours(23),end.setMinutes(59),end.setSeconds(59); 
+        document.cookie="adWatch=yes;expires="+end.toUTCString();
+    }else{
+        document.getElementsByClassName('myfull')[0].style.display="none";
+    }
+</script>
+</body>
+</html>
