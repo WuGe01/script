@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋轉</title>
+    <style>
+        /* #AA{
+            transform: rotate(45deg);
+        } */
+    </style>
+</head>
+<body style="background-color: black;">
+    <div style="height: 100vh;display: flex;justify-content: center;align-items: center;">
+        <img src="./img/00-01.png" id="AA">
+
+    </div>
+
+    <!-- style.transform -->
+    <script>
+        let s=new Date().getSeconds().toString();
+        document.getElementById("AA").style.transform='rotate(45deg)';
+    </script>
+</body>
+</html>

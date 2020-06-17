@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數位時鐘計時器</title>
+</head>
+<body style="background-color: black;">
+    <div style="height: 100vh;display: flex;justify-content: center;align-items: center;">
+        <span><img id="clockh1" src="./img/00-01.png"></span>
+        <span><img id="clockh2" src="./img/00-01.png"></span>
+        <span><img id="clockhh" src="./img/00-11.png"></span>
+        <span><img id="clockm1" src="./img/00-01.png"></span>
+        <span><img id="clockm2" src="./img/00-01.png"></span>
+        <span><img id="clockmm" src="./img/00-11.png"></span>
+        <span><img id="clocks1" src="./img/00-01.png"></span>
+        <span><img id="clocks2" src="./img/00-01.png"></span>
+    </div>
+    <script>
+        let AS='0';
+        time();
+        function time() {
+            let h=new Date().getHours().toString();
+            let m=new Date().getMinutes().toString();
+            let s=new Date().getSeconds().toString();
+            if(h.length == 2){
+                let h1=h.substr(0,1);
+                document.getElementById('clockh1').src=`./img/00-0${h1}.png`;
+                let h2=h.substr(1,2);
+                document.getElementById('clockh2').src=`./img/00-0${h2}.png`;
+            }else{
+                document.getElementById('clockh1').src=`./img/00-00.png`;
+                let h3=h.substr(0,1);
+                document.getElementById('clockh2').src=`./img/00-0${h3}.png`;
+            }
+            if(m.length == 2){
+                let h1=m.substr(0,1);
+                document.getElementById('clockm1').src=`./img/00-0${h1}.png`;
+                let h2=m.substr(1,2);
+                document.getElementById('clockm2').src=`./img/00-0${h2}.png`;
+            }else{
+                document.getElementById('clockm1').src=`./img/00-00.png`;
+                let h3=m.substr(0,1);
+                document.getElementById('clockm2').src=`./img/00-0${h3}.png`;
+            }
+            if(s.length == 2){
+                let h1=s.substr(0,1);
+                document.getElementById('clocks1').src=`./img/00-0${h1}.png`;
+                let h2=s.substr(1,2);
+                document.getElementById('clocks2').src=`./img/00-0${h2}.png`;
+            }else{
+                document.getElementById('clocks1').src=`./img/00-00.png`;
+                let h3=s.substr(0,1);
+                document.getElementById('clocks2').src=`./img/00-0${h3}.png`;
+            }
+            if(AS == '0'){
+                document.getElementById('clockhh').src=`./img/00-12.png`;
+                document.getElementById('clockmm').src=`./img/00-12.png`;
+                AS = '1';
+            }else{
+                document.getElementById('clockhh').src=`./img/00-11.png`;
+                document.getElementById('clockmm').src=`./img/00-11.png`;
+                AS = '0';
+            }             
+        }
+        let gotime=setInterval(time,500);
+    </script>
+</body>
+</html>
